@@ -93,8 +93,8 @@ function clearAnimationClasses() {
 
 function applyAnimationClasses(direction) {
   if (direction === "backwards") {
-    image.classList.add("slide-left-animation");
-  } else if (direction === "forwards") {
     image.classList.add("slide-right-animation");
+  } else if (direction === "forwards") {
+    image.classList.add("slide-left-animation");
   }
 }

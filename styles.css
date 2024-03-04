@@ -14,14 +14,29 @@
 }
 
 body {
-  height: 100dvh;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+#top-row, #bottom-row {
+  margin:0;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
 }
 
 nav {
   display: flex;
   justify-content: flex-start;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   padding: 60px;
   z-index: 10;
 }
@@ -126,6 +141,7 @@ nav a {
 #image-container {
   object-fit: cover;
   padding: 0;
+  max-width: 100%;
 }
 
 #top-right-description a {
@@ -275,6 +291,10 @@ p {
 }
 
 @media (max-width: 1100px) {
+  nav{
+    background-image: linear-gradient(#414141, transparent);
+    z-index: 100;
+  }
   #control-btns button {
     width: 50px;
     height: 50px;
@@ -284,13 +304,18 @@ p {
 @media (max-width: 800px) {
   nav {
     padding: 30px;
-    width: 100dvw;
+    width: 100%;
     background-image: linear-gradient(#414141, transparent);
     justify-content: center;
+    z-index: 100;
+  }
+
+  #main-link{
+    margin:0;
   }
 
   .mbl-menu {
-    width: 105dvw;
+    width: 100%;
   }
 
   #control-btns button {
